@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Slides on 槲落的小站</title>
+    <link>https://relia.xyz/slide/</link>
+    <description>Recent content in Slides on 槲落的小站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 26 Jul 2021 17:41:36 +0800</lastBuildDate><atom:link href="https://relia.xyz/slide/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Test</title>
+      <link>https://relia.xyz/slide/test/</link>
+      <pubDate>Mon, 26 Jul 2021 17:41:36 +0800</pubDate>
+      
+      <guid>https://relia.xyz/slide/test/</guid>
+      <description>Color Dust 色尘，佛教语。“六尘”之一。 即眼根（视觉）所触及的尘境。 色尘知有数，劫烬岂无年。 —— 唐·李绅《题法华寺》 数据来源 ~~ 图片即数据 像素 =&amp;gt; R G B</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>杂项 on 槲落的小站</title>
+    <link>https://relia.xyz/categories/%E6%9D%82%E9%A1%B9/</link>
+    <description>Recent content in 杂项 on 槲落的小站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 23 Jul 2021 16:35:42 +0800</lastBuildDate><atom:link href="https://relia.xyz/categories/%E6%9D%82%E9%A1%B9/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>NASA Exercise: Ranking Survival Objects for the Moon</title>
+      <link>https://relia.xyz/post/nasa-exercise/</link>
+      <pubDate>Fri, 23 Jul 2021 16:35:42 +0800</pubDate>
+      
+      <guid>https://relia.xyz/post/nasa-exercise/</guid>
+      <description>&lt;p&gt;前日参加活动, 中间有个团队小游戏比拼活动, 是NASA的一道测试题:&lt;/p&gt;
+&lt;p&gt;排序你在迫降到月球上完好无损的15件物品的重要程度&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>My First Hugo</title>
+      <link>https://relia.xyz/post/my-first-hugo/</link>
+      <pubDate>Fri, 23 Jul 2021 10:38:44 +0800</pubDate>
+      
+      <guid>https://relia.xyz/post/my-first-hugo/</guid>
+      <description>&lt;p&gt;第一篇Hugo搭建的网站上的博客, 包含用Hugo的原因和对Hugo上Markdown的测试&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
