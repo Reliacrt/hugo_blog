@@ -1,0 +1,19 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Protocol - 标签 - 槲落的小站</title>
+        <link>https://relia.xyz/tags/protocol/</link>
+        <description>Protocol - 标签 - 槲落的小站</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>reliacrt@outlook.com (槲落)</managingEditor>
+            <webMaster>reliacrt@outlook.com (槲落)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 05 Aug 2021 10:36:51 &#43;0800</lastBuildDate><atom:link href="https://relia.xyz/tags/protocol/" rel="self" type="application/rss+xml" /><item>
+    <title>QUIC</title>
+    <link>https://relia.xyz/2021/08/quic-protocol/</link>
+    <pubDate>Thu, 05 Aug 2021 10:36:51 &#43;0800</pubDate><author>
+        <name>槲落</name>
+    </author><guid>https://relia.xyz/2021/08/quic-protocol/</guid>
+    <description><![CDATA[<p>Google设计的传输层协议<strong>QUIC</strong>(<strong>Q</strong>uick <strong>U</strong>DP <strong>I</strong>nternet <strong>C</strong>onnections), 资料来源:</p>
+<ol>
+<li>The QUIC Transport Protocol: Design and Internet-Scale Deployment<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></li>
+<li>QUIC overview<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></li>
+</ol>]]></description>
+</item></channel>
+</rss>

@@ -1,7 +1,7 @@
 baseURL = "https://relia.xyz"
 # [en, zh-cn, fr, pl, ...] determines default content language
 # [en, zh-cn, fr, pl, ...] 设置默认的语言
-defaultContentLanguage = "en"
+defaultContentLanguage = "zh-cn"
 # theme
 # 主题
 theme = "DoIt"
@@ -25,7 +25,7 @@ enableEmoji = true
 
 [languages]
   [languages.en]
-    weight = 1
+    weight = 2
     # language code
     languageCode = "en"
     # language name
@@ -76,54 +76,22 @@ enableEmoji = true
         title = ""
         weight = 4
       [[languages.en.menu.main]]
-        identifier = "authors"
-        pre = ""
-        post = ""
-        name = "Authors"
-        url = "/authors/"
-        title = ""
-        weight = 5
-      [[languages.en.menu.main]]
-        identifier = "showcase"
-        pre = ""
-        post = ""
-        name = "Showcase"
-        url = "/showcase/"
-        title = ""
-        weight = 6
-      [[languages.en.menu.main]]
-        identifier = "documentation"
-        pre = ""
-        post = ""
-        name = "Docs"
-        url = "/categories/documentation/"
-        title = ""
-        weight = 7
-      [[languages.en.menu.main]]
         identifier = "about"
         pre = ""
         post = ""
         name = "About"
         url = "/about/"
         title = ""
-        weight = 8
-      [[languages.en.menu.main]]
-        identifier = "github"
-        pre = "<i class='fab fa-github fa-fw'></i>"
-        post = ""
-        name = ""
-        url = "https://github.com/HEIGE-PCloud/DoIt"
-        title = "GitHub"
-        weight = 9
+        weight = 5
     [languages.en.params]
       # site description
-      description = "The official documentation for the Hugo DoIt theme"
+      description = "You've found Relia's stone."
       # site keywords
-      keywords = ["Theme", "Hugo"]
+      keywords = ["Relia", "Blog"]
       # App icon config
       [languages.en.params.app]
         # optional site title override for the app when added to an iOS home screen or Android launcher
-        title = "DoIt"
+        title = "Relia's blog"
         # whether to omit favicon resource links
         noFavicon = false
         # modern SVG favicon to use in place of older style .png and .ico files
@@ -178,7 +146,7 @@ enableEmoji = true
           # title shown in home page (HTML format is supported)
           title = ""
           # subtitle shown in home page
-          subtitle = "A Clean, Elegant but Advanced Hugo Theme"
+          subtitle = "Relia's blog."
           # whether to use typeit animation for subtitle
           typeit = true
           # whether to show social links
@@ -190,94 +158,9 @@ enableEmoji = true
           enable = true
           # special amount of posts in each home posts page
           paginate = 7
-      # Social config in home page
-      [languages.en.params.social]
-        GitHub = "xxxx"
-        Linkedin = ""
-        Twitter = "xxxx"
-        Instagram = ""
-        Facebook = "xxxx"
-        Telegram = "xxxx"
-        Medium = ""
-        Gitlab = ""
-        Youtubelegacy = "xxxx"
-        Youtubecustom = ""
-        Youtubechannel = ""
-        Tumblr = ""
-        Quora = ""
-        Keybase = ""
-        Pinterest = ""
-        Reddit = ""
-        Codepen = ""
-        FreeCodeCamp = ""
-        Bitbucket = ""
-        Stackoverflow = ""
-        Weibo = ""
-        Odnoklassniki = ""
-        VK = ""
-        Flickr = ""
-        Xing = ""
-        Snapchat = ""
-        Soundcloud = ""
-        Spotify = ""
-        Bandcamp = ""
-        Paypal = ""
-        Fivehundredpx = ""
-        Mix = ""
-        Goodreads = ""
-        Lastfm = ""
-        Foursquare = ""
-        Hackernews = ""
-        Kickstarter = ""
-        Patreon = ""
-        Steam = ""
-        Twitch = ""
-        Strava = ""
-        Skype = ""
-        Whatsapp = ""
-        Zhihu = ""
-        Douban = ""
-        Angellist = ""
-        Slidershare = ""
-        Jsfiddle = ""
-        Deviantart = ""
-        Behance = ""
-        Dribbble = ""
-        Wordpress = ""
-        Vine = ""
-        Googlescholar = ""
-        Researchgate = ""
-        Thingiverse = ""
-        Devto = ""
-        Gitea = ""
-        XMPP = ""
-        Matrix = ""
-        Bilibili = ""
-        ORCID = ""
-        QQ = ""
-        QQGroup = ""
-        Liberapay = "xxx"
-        Ko-Fi = "xxx"
-        BuyMeACoffee = ""
-        Linktree = ""
-        Email = "xxxx@xxxx.com"
-        RSS = true
-        [languages.en.params.social.Mastodon]
-          id = "@xxxx"
-          prefix = "https://mastodon.technology/"
-        [languages.en.params.social.Diaspora]
-          id = "@xxxx"
-          prefix = "https://yyyy/"
-      # Sponsor config
-      [languages.en.params.sponsor]
-        enable = false
-        bio = "If you find this post helpful, please consider sponsoring."
-        link = "https://github.com/sponsors/HEIGE-PCloud"
-        # custom = "<a href=\"https://www.buymeacoffee.com/PCloud\" target=\"_blank\"><img src=\"https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png\" alt=\"Buy Me A Coffee\" style=\"height: 40px !important;width: 145 !important;\" ></a>"
-
 
   [languages.zh-cn]
-    weight = 2
+    weight = 1
     # 网站语言, 仅在这里 CN 大写
     languageCode = "zh-CN"
     # 语言名称
@@ -327,53 +210,22 @@ enableEmoji = true
         title = ""
         weight = 4
       [[languages.zh-cn.menu.main]]
-        identifier = "authors"
-        pre = ""
-        post = ""
-        name = "作者"
-        url = "/authors/"
-        title = ""
-        weight = 5
-      [[languages.zh-cn.menu.main]]
-        identifier = "showcase"
-        pre = ""
-        post = ""
-        name = "作品"
-        url = "/showcase/"
-        title = ""
-        weight = 6
-      [[languages.zh-cn.menu.main]]
-        identifier = "documentation"
-        pre = ""
-        name = "文档"
-        url = "/categories/documentation/"
-        title = ""
-        weight = 7
-      [[languages.zh-cn.menu.main]]
         identifier = "about"
         pre = ""
         post = ""
         name = "关于"
         url = "/about/"
         title = ""
-        weight = 8
-      [[languages.zh-cn.menu.main]]
-        identifier = "github"
-        pre = "<i class='fab fa-github fa-fw'></i>"
-        post = ""
-        name = ""
-        url = "https://github.com/HEIGE-PCloud/DoIt"
-        title = "GitHub"
-        weight = 9
+        weight = 5
     [languages.zh-cn.params]
       # 网站描述
-      description = "Hugo DoIt 主题官方文档"
+      description = "槲落的小站，你发现了"
       # 网站关键词
-      keywords = ["Theme", "Hugo"]
+      keywords = ["Relia", "Blog"]
       # 应用图标配置
       [languages.zh-cn.params.app]
         # 当添加到 iOS 主屏幕或者 Android 启动器时的标题, 覆盖默认标题
-        title = "DoIt"
+        title = "槲落的小站"
         # 是否隐藏网站图标资源链接
         noFavicon = false
         # 更现代的 SVG 网站图标, 可替代旧的 .png 和 .ico 文件
@@ -382,38 +234,6 @@ enableEmoji = true
         iconColor = "#5bbad5"
         # Windows v8-10 磁贴颜色
         tileColor = "#da532c"
-      # 搜索配置
-      [languages.zh-cn.params.search]
-        enable = true
-        # 搜索引擎的类型 ("lunr", "algolia", "fuse")
-        type = "algolia"
-        # 文章内容最长索引长度
-        contentLength = 4000
-        # 搜索框的占位提示语
-        placeholder = ""
-        # 最大结果数目
-        maxResultLength = 10
-        # 结果内容片段长度
-        snippetLength = 50
-        # 搜索结果中高亮部分的 HTML 标签
-        highlightTag = "em"
-        # 是否在搜索索引中使用基于 baseURL 的绝对路径
-        absoluteURL = false
-        [languages.zh-cn.params.search.algolia]
-          index = "zh_cn_index"
-          appID = "5YGRNRQK1G"
-          searchKey = "0ff6874805de24b84aa1d5ebccad56cd"
-        [languages.zh-cn.params.search.fuse]
-          # https://fusejs.io/api/options.html
-          isCaseSensitive = false
-          minMatchCharLength = 2
-          findAllMatches = false
-          location = 0
-          threshold = 0.1
-          distance = 100
-          ignoreLocation = true
-          useExtendedSearch = false
-          ignoreFieldNorm = false
       # 主页信息设置
       [languages.zh-cn.params.home]
         # RSS 文章数目
@@ -428,7 +248,7 @@ enableEmoji = true
           # 主页显示的网站标题 (支持 HTML 格式)
           title = ""
           # 主页显示的网站副标题
-          subtitle = "一个简洁、优雅且高效的 Hugo 主题"
+          subtitle = "Relia的自留地"
           # 是否为副标题显示打字机动画
           typeit = true
           # 是否显示社交账号
@@ -440,85 +260,6 @@ enableEmoji = true
           enable = true
           # 主页每页显示文章数量
           paginate = 7
-      # 主页的社交信息设置
-      [languages.zh-cn.params.social]
-        GitHub = "xxxx"
-        Linkedin = ""
-        Twitter = ""
-        Instagram = ""
-        Facebook = ""
-        Telegram = ""
-        Medium = ""
-        Gitlab = ""
-        Youtubelegacy = ""
-        Youtubecustom = ""
-        Youtubechannel = ""
-        Tumblr = ""
-        Quora = ""
-        Keybase = ""
-        Pinterest = ""
-        Reddit = ""
-        Codepen = ""
-        FreeCodeCamp = ""
-        Bitbucket = ""
-        Stackoverflow = ""
-        Weibo = "xxxx"
-        Odnoklassniki = ""
-        VK = ""
-        Flickr = ""
-        Xing = ""
-        Snapchat = ""
-        Soundcloud = ""
-        Spotify = ""
-        Bandcamp = ""
-        Paypal = ""
-        Fivehundredpx = ""
-        Mix = ""
-        Goodreads = ""
-        Lastfm = ""
-        Foursquare = ""
-        Hackernews = ""
-        Kickstarter = ""
-        Patreon = ""
-        Steam = "xxxx"
-        Twitch = ""
-        Strava = ""
-        Skype = ""
-        Whatsapp = ""
-        Zhihu = "xxxx"
-        Douban = "xxxx"
-        Angellist = ""
-        Slidershare = ""
-        Jsfiddle = ""
-        Deviantart = ""
-        Behance = ""
-        Dribbble = ""
-        Wordpress = ""
-        Vine = ""
-        Googlescholar = ""
-        Researchgate = ""
-        Mastodon = ""
-        Thingiverse = ""
-        Devto = "xxxx"
-        Gitea = ""
-        XMPP = ""
-        Matrix = ""
-        Bilibili = "xxxx"
-        ORCID = ""
-        Liberapay = ""
-        Ko-Fi = ""
-        BuyMeACoffee = ""
-        Linktree = ""
-        QQ = ""
-        QQGroup = ""
-        Email = "xxxx@xxxx.com"
-        RSS = true
-        # 赞助设置
-      [languages.zh-cn.params.sponsor]
-        enable = false
-        bio = "如果你觉得这篇文章对你有所帮助，欢迎赞赏~"
-        link = "https://github.com/sponsors/HEIGE-PCloud"
-        # custom = "<a href=\"https://www.buymeacoffee.com/PCloud\" target=\"_blank\"><img src=\"https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png\" alt=\"Buy Me A Coffee\" style=\"height: 40px !important;width: 145 !important;\" ></a>"
 
 
 [params]
@@ -527,7 +268,7 @@ enableEmoji = true
   title = "槲落的小站"
   # DoIt theme version
   # DoIt 主题版本
-  version = "0.2.X"
+  version = "0.3.X"
   # site default theme ("light", "dark", "black", "auto")
   # 网站默认主题 ("light", "dark", "black", "auto")
   defaultTheme = "auto"
@@ -582,6 +323,38 @@ enableEmoji = true
       # 是否为标题显示打字机动画
       typeit = true
 
+  # DoIt 新增 | 0.2.0 搜索配置
+  [params.search]
+    enable = true
+    # 搜索引擎的类型 ("algolia", "fuse")
+    type = "fuse"
+    # 文章内容最长索引长度
+    contentLength = 4000
+    # 搜索框的占位提示语
+    placeholder = ""
+    # DoIt 新增 | 0.2.1 最大结果数目
+    maxResultLength = 10
+    # DoIt 新增 | 0.2.3 结果内容片段长度
+    snippetLength = 50
+    # DoIt 新增 | 0.2.1 搜索结果中高亮部分的 HTML 标签
+    highlightTag = "em"
+    # DoIt 新增 | 0.2.4 是否在搜索索引中使用基于 baseURL 的绝对路径
+    absoluteURL = false
+    [params.search.algolia]
+      index = ""
+      appID = ""
+      searchKey = ""
+    [params.search.fuse]
+      # DoIt 新增 | 0.2.12 https://fusejs.io/api/options.html
+      isCaseSensitive = false
+      minMatchCharLength = 2
+      findAllMatches = false
+      location = 0
+      threshold = 0.3
+      distance = 100
+      ignoreLocation = false
+      useExtendedSearch = false
+      ignoreFieldNorm = false
   # Footer config
   # 页面底部信息配置
   [params.footer]
@@ -645,6 +418,80 @@ enableEmoji = true
     # RSS 文章数目
     rss = 10
 
+  
+  # Social config in home page
+  [languages.en.params.social]
+    GitHub = "xxxx"
+    #Linkedin = ""
+    Twitter = "xxxx"
+    #Instagram = ""
+    #Facebook = "xxxx"
+    Telegram = "xxxx"
+    Medium = ""
+    #Gitlab = ""
+    #Youtubelegacy = "xxxx"
+    #Youtubecustom = ""
+    #Youtubechannel = ""
+    #Tumblr = ""
+    Quora = ""
+    #Keybase = ""
+    #Pinterest = ""
+    Reddit = ""
+    #Codepen = ""
+    #FreeCodeCamp = ""
+    #Bitbucket = ""
+    Stackoverflow = ""
+    Weibo = ""
+    #Odnoklassniki = ""
+    #VK = ""
+    #Flickr = ""
+    #Xing = ""
+    #Snapchat = ""
+    #Soundcloud = ""
+    #Spotify = ""
+    #Bandcamp = ""
+    #Paypal = ""
+    #Fivehundredpx = ""
+    #Mix = ""
+    #Goodreads = ""
+    #Lastfm = ""
+    #Foursquare = ""
+    #Hackernews = ""
+    #Kickstarter = ""
+    #Patreon = ""
+    Steam = ""
+    #Twitch = ""
+    #Strava = ""
+    #Skype = ""
+    #Whatsapp = ""
+    Zhihu = ""
+    #Douban = ""
+    #Angellist = ""
+    #Slidershare = ""
+    #Jsfiddle = ""
+    #Deviantart = ""
+    #Behance = ""
+    #Dribbble = ""
+    #Wordpress = ""
+    #Vine = ""
+    #Googlescholar = ""
+    #Researchgate = ""
+    #Thingiverse = ""
+    #Devto = ""
+    Gitea = ""
+    #XMPP = ""
+    #Matrix = ""
+    Bilibili = ""
+    #ORCID = ""
+    #QQ = ""
+    #QQGroup = ""
+    #Liberapay = "xxx"
+    #Ko-Fi = "xxx"
+    #BuyMeACoffee = ""
+    #Linktree = ""
+    Email = "reliacrt@outlook.com"
+    RSS = true
+
   # Page config
   # 文章页面配置
   [params.page]
@@ -656,7 +503,7 @@ enableEmoji = true
     hiddenFromSearch = false
     # whether to enable twemoji
     # 是否使用 twemoji
-    twemoji = false
+    twemoji = true
     # whether to enable lightgallery
     # 是否使用 lightgallery
     lightgallery = false
@@ -867,8 +714,8 @@ enableEmoji = true
       # Waline comment config (https://waline.js.org)
       # Waline 评论系统设置 (https://waline.js.org)
       [params.page.comment.waline]
-        enable = false
-        serverURL = "https://waline-comment-doit.vercel.app/"
+        enable = true
+        serverURL = "https://comment-waline-api.vercel.app/"
         pageview = true
         comment = true
         # emoji = ['https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo']
@@ -909,7 +756,7 @@ enableEmoji = true
       [params.page.comment.utterances]
         enable = false
         # owner/repo
-        repo = ""
+        repo = "Reliacrt/utteranc_comment"
         issueTerm = "pathname"
         label = ""
         lightTheme = "github-light"
@@ -917,7 +764,7 @@ enableEmoji = true
       # Twikoo comment config (https://twikoo.js.org/)
       # Twikoo comment 评论系统设置 (https://twikoo.js.org/)
       [params.page.comment.twikoo]
-        enable = true
+        enable = false
         envId = "https://twikoo-comments-doit.vercel.app/"
         region = ""
         path = ""
@@ -1147,9 +994,9 @@ enableEmoji = true
 # Author config
 # 作者配置
 [author]
-  name = "PCloud"
-  email = "heige.pcloud@outlook.com"
-  link = "https://github.com/HEIGE-PCloud"
+  name = "槲落"
+  email = "reliacrt@outlook.com"
+  link = "https://github.com/reliacrt"
   avatar = "/images/avatar.webp"
   gravatarEmail = ""
 
@@ -1164,7 +1011,7 @@ enableEmoji = true
 # Permalinks 配置 (https://gohugo.io/content-management/urls/#permalinks)
 [Permalinks]
   # posts = ":year/:month/:filename"
-  posts = ":filename"
+  posts = ":year/:month/:filename"
 
 # Privacy config (https://gohugo.io/about/hugo-and-gdpr/)
 # 隐私信息配置 (https://gohugo.io/about/hugo-and-gdpr/)
@@ -1203,7 +1050,7 @@ enableEmoji = true
 # Options for taxonomies
 # 用于分类的设置
 [taxonomies]
-author = "authors"
-category = "categories"
-tag = "tags"
-series = "series"
+  #author = "authors"
+  category = "categories"
+  tag = "tags"
+  series = "series"

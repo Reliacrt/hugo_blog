@@ -1,21 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>随笔 on 槲落的小站</title>
-    <link>https://relia.xyz/categories/%E9%9A%8F%E7%AC%94/</link>
-    <description>Recent content in 随笔 on 槲落的小站</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Sat, 23 Apr 2022 21:10:24 +0800</lastBuildDate><atom:link href="https://relia.xyz/categories/%E9%9A%8F%E7%AC%94/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>关于同一性</title>
-      <link>https://relia.xyz/post/about_identity/</link>
-      <pubDate>Sat, 23 Apr 2022 21:10:24 +0800</pubDate>
-      
-      <guid>https://relia.xyz/post/about_identity/</guid>
-      <description>&lt;p&gt;本文所说的是看法, 暂时没有时间把推理所用资料出处记录下来, 也没有详细的论证, 如果你有时间, 可以搜集更广泛的材料,
-以更正式的体裁书写这个观点, 我只是提供一个新的视角.&lt;/p&gt;</description>
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>随笔 - 分类 - 槲落的小站</title>
+        <link>https://relia.xyz/categories/%E9%9A%8F%E7%AC%94/</link>
+        <description>随笔 - 分类 - 槲落的小站</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>reliacrt@outlook.com (槲落)</managingEditor>
+            <webMaster>reliacrt@outlook.com (槲落)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 23 Apr 2022 21:10:24 &#43;0800</lastBuildDate><atom:link href="https://relia.xyz/categories/%E9%9A%8F%E7%AC%94/" rel="self" type="application/rss+xml" /><item>
+    <title>关于同一性</title>
+    <link>https://relia.xyz/2022/04/about_identity/</link>
+    <pubDate>Sat, 23 Apr 2022 21:10:24 &#43;0800</pubDate><author>
+        <name>槲落</name>
+    </author><guid>https://relia.xyz/2022/04/about_identity/</guid>
+    <description><![CDATA[<p>本文所说的是看法, 暂时没有时间把推理所用资料出处记录下来, 也没有详细的论证, 如果你有时间, 可以搜集更广泛的材料,
+以更正式的体裁书写这个观点, 我只是提供一个新的视角.</p>]]></description>
+</item></channel>
 </rss>

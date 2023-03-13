@@ -1,154 +1,88 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>槲落的小站</title>
-    <link>https://relia.xyz/</link>
-    <description>Recent content on 槲落的小站</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Sat, 23 Apr 2022 21:10:24 +0800</lastBuildDate><atom:link href="https://relia.xyz/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>关于同一性</title>
-      <link>https://relia.xyz/post/about_identity/</link>
-      <pubDate>Sat, 23 Apr 2022 21:10:24 +0800</pubDate>
-      
-      <guid>https://relia.xyz/post/about_identity/</guid>
-      <description>&lt;p&gt;本文所说的是看法, 暂时没有时间把推理所用资料出处记录下来, 也没有详细的论证, 如果你有时间, 可以搜集更广泛的材料,
-以更正式的体裁书写这个观点, 我只是提供一个新的视角.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Equivalence Relation</title>
-      <link>https://relia.xyz/post/equivalence/</link>
-      <pubDate>Sun, 17 Apr 2022 14:14:04 +0800</pubDate>
-      
-      <guid>https://relia.xyz/post/equivalence/</guid>
-      <description>关于商 出发点 在这里我要用更普遍的例子来讲数学中的商这个抽象概念. 日常例子 亲缘关系 定义 我在这里要定义一种亲缘关系, 不用奉为圭臬, 我只是用这个方</description>
-    </item>
-    
-    <item>
-      <title>金融单词</title>
-      <link>https://relia.xyz/post/financial_words/</link>
-      <pubDate>Thu, 06 Jan 2022 11:14:13 +0800</pubDate>
-      
-      <guid>https://relia.xyz/post/financial_words/</guid>
-      <description>证券: securities 债务证券: debt 钞票: banknote 债券: bonds 债券: debenture 股本证券: equity 股票: stock 衍生品: derivatives 远期: forwards 期货: futures 期权: options 互换: swaps 利息: interest</description>
-    </item>
-    
-    <item>
-      <title>芥川龙之介-竹林中</title>
-      <link>https://relia.xyz/post/zhulinzhong/</link>
-      <pubDate>Thu, 18 Nov 2021 21:36:33 +0800</pubDate>
-      
-      <guid>https://relia.xyz/post/zhulinzhong/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;令人震撼 芥川龙之介 《竹林中》&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>Go泛型体验</title>
-      <link>https://relia.xyz/post/go-generics-practice/</link>
-      <pubDate>Fri, 17 Sep 2021 15:27:16 +0800</pubDate>
-      
-      <guid>https://relia.xyz/post/go-generics-practice/</guid>
-      <description>&lt;p&gt;久等的泛型终于在Go语言中提供了支持, 所以赶快体验一下泛型的舒适.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>QUIC</title>
-      <link>https://relia.xyz/post/quic-protocol/</link>
-      <pubDate>Thu, 05 Aug 2021 10:36:51 +0800</pubDate>
-      
-      <guid>https://relia.xyz/post/quic-protocol/</guid>
-      <description>&lt;p&gt;Google设计的传输层协议&lt;strong&gt;QUIC&lt;/strong&gt;(&lt;strong&gt;Q&lt;/strong&gt;uick &lt;strong&gt;U&lt;/strong&gt;DP &lt;strong&gt;I&lt;/strong&gt;nternet &lt;strong&gt;C&lt;/strong&gt;onnections), 资料来源:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;The QUIC Transport Protocol: Design and Internet-Scale Deployment&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
-&lt;li&gt;QUIC overview&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
-&lt;/ol&gt;</description>
-    </item>
-    
-    <item>
-      <title>Learn Go Error Prone Details</title>
-      <link>https://relia.xyz/post/learn-go-error-prone-details/</link>
-      <pubDate>Wed, 04 Aug 2021 10:17:43 +0800</pubDate>
-      
-      <guid>https://relia.xyz/post/learn-go-error-prone-details/</guid>
-      <description>&lt;p&gt;Go语言中的一些易错细节, 参考资料&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>https://relia.xyz/slide/test/</link>
-      <pubDate>Mon, 26 Jul 2021 17:41:36 +0800</pubDate>
-      
-      <guid>https://relia.xyz/slide/test/</guid>
-      <description>Color Dust 色尘，佛教语。“六尘”之一。 即眼根（视觉）所触及的尘境。 色尘知有数，劫烬岂无年。 —— 唐·李绅《题法华寺》 数据来源 ~~ 图片即数据 像素 =&amp;gt; R G B</description>
-    </item>
-    
-    <item>
-      <title>Try Mnist</title>
-      <link>https://relia.xyz/post/try-mnist/</link>
-      <pubDate>Mon, 26 Jul 2021 10:23:26 +0800</pubDate>
-      
-      <guid>https://relia.xyz/post/try-mnist/</guid>
-      <description>&lt;p&gt;Artificial Neural Network的尝试, 资料来源&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>NASA Exercise: Ranking Survival Objects for the Moon</title>
-      <link>https://relia.xyz/post/nasa-exercise/</link>
-      <pubDate>Fri, 23 Jul 2021 16:35:42 +0800</pubDate>
-      
-      <guid>https://relia.xyz/post/nasa-exercise/</guid>
-      <description>&lt;p&gt;前日参加活动, 中间有个团队小游戏比拼活动, 是NASA的一道测试题:&lt;/p&gt;
-&lt;p&gt;排序你在迫降到月球上完好无损的15件物品的重要程度&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>关于我</title>
-      <link>https://relia.xyz/about/</link>
-      <pubDate>Fri, 23 Jul 2021 10:54:44 +0800</pubDate>
-      
-      <guid>https://relia.xyz/about/</guid>
-      <description>暂时还没写, to be continue</description>
-    </item>
-    
-    <item>
-      <title>工具</title>
-      <link>https://relia.xyz/tools/</link>
-      <pubDate>Fri, 23 Jul 2021 10:54:44 +0800</pubDate>
-      
-      <guid>https://relia.xyz/tools/</guid>
-      <description>现在没时间列, to be continue</description>
-    </item>
-    
-    <item>
-      <title>My First Hugo</title>
-      <link>https://relia.xyz/post/my-first-hugo/</link>
-      <pubDate>Fri, 23 Jul 2021 10:38:44 +0800</pubDate>
-      
-      <guid>https://relia.xyz/post/my-first-hugo/</guid>
-      <description>&lt;p&gt;第一篇Hugo搭建的网站上的博客, 包含用Hugo的原因和对Hugo上Markdown的测试&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>归档</title>
-      <link>https://relia.xyz/archives/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://relia.xyz/archives/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>搜索</title>
-      <link>https://relia.xyz/search/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://relia.xyz/search/</guid>
-      <description></description>
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>槲落的小站</title>
+        <link>https://relia.xyz/</link>
+        <description>槲落的小站，你发现了</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>reliacrt@outlook.com (槲落)</managingEditor>
+            <webMaster>reliacrt@outlook.com (槲落)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 23 Apr 2022 21:10:24 &#43;0800</lastBuildDate>
+            <atom:link href="https://relia.xyz/index.xml" rel="self" type="application/rss+xml" />
+        <item>
+    <title>关于同一性</title>
+    <link>https://relia.xyz/2022/04/about_identity/</link>
+    <pubDate>Sat, 23 Apr 2022 21:10:24 &#43;0800</pubDate><author>
+        <name>槲落</name>
+    </author><guid>https://relia.xyz/2022/04/about_identity/</guid>
+    <description><![CDATA[<p>本文所说的是看法, 暂时没有时间把推理所用资料出处记录下来, 也没有详细的论证, 如果你有时间, 可以搜集更广泛的材料,
+以更正式的体裁书写这个观点, 我只是提供一个新的视角.</p>]]></description>
+</item><item>
+    <title>Equivalence Relation</title>
+    <link>https://relia.xyz/2022/04/equivalence/</link>
+    <pubDate>Sun, 17 Apr 2022 14:14:04 &#43;0800</pubDate><author>
+        <name>槲落</name>
+    </author><guid>https://relia.xyz/2022/04/equivalence/</guid>
+    <description><![CDATA[关于商 1 出发点在这里我要用更普遍的例子来讲数学中的商这个抽象概念. 2 日常例子 2.1 亲缘关系 2.1.1 定义我在这里要定义一种亲缘关系, 不用奉为圭臬, 我只是]]></description>
+</item><item>
+    <title>金融单词</title>
+    <link>https://relia.xyz/2022/01/financial_words/</link>
+    <pubDate>Thu, 06 Jan 2022 11:14:13 &#43;0800</pubDate><author>
+        <name>槲落</name>
+    </author><guid>https://relia.xyz/2022/01/financial_words/</guid>
+    <description><![CDATA[证券: securities 债务证券: debt 钞票: banknote 债券: bonds 债券: debenture 股本证券: equity 股票: stock 衍生品: derivatives 远期: forwards 期货: futures 期权: options 互换: swaps 利息: interest]]></description>
+</item><item>
+    <title>芥川龙之介-竹林中</title>
+    <link>https://relia.xyz/2021/11/zhulinzhong/</link>
+    <pubDate>Thu, 18 Nov 2021 21:36:33 &#43;0800</pubDate><author>
+        <name>槲落</name>
+    </author><guid>https://relia.xyz/2021/11/zhulinzhong/</guid>
+    <description><![CDATA[<blockquote>
+<p>令人震撼 芥川龙之介 《竹林中》</p>
+</blockquote>]]></description>
+</item><item>
+    <title>Go泛型体验</title>
+    <link>https://relia.xyz/2021/09/go-generics-practice/</link>
+    <pubDate>Fri, 17 Sep 2021 15:27:16 &#43;0800</pubDate><author>
+        <name>槲落</name>
+    </author><guid>https://relia.xyz/2021/09/go-generics-practice/</guid>
+    <description><![CDATA[<p>久等的泛型终于在Go语言中提供了支持, 所以赶快体验一下泛型的舒适.</p>]]></description>
+</item><item>
+    <title>QUIC</title>
+    <link>https://relia.xyz/2021/08/quic-protocol/</link>
+    <pubDate>Thu, 05 Aug 2021 10:36:51 &#43;0800</pubDate><author>
+        <name>槲落</name>
+    </author><guid>https://relia.xyz/2021/08/quic-protocol/</guid>
+    <description><![CDATA[<p>Google设计的传输层协议<strong>QUIC</strong>(<strong>Q</strong>uick <strong>U</strong>DP <strong>I</strong>nternet <strong>C</strong>onnections), 资料来源:</p>
+<ol>
+<li>The QUIC Transport Protocol: Design and Internet-Scale Deployment<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></li>
+<li>QUIC overview<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></li>
+</ol>]]></description>
+</item><item>
+    <title>Learn Go Error Prone Details</title>
+    <link>https://relia.xyz/2021/08/learn-go-error-prone-details/</link>
+    <pubDate>Wed, 04 Aug 2021 10:17:43 &#43;0800</pubDate><author>
+        <name>槲落</name>
+    </author><guid>https://relia.xyz/2021/08/learn-go-error-prone-details/</guid>
+    <description><![CDATA[<p>Go语言中的一些易错细节, 参考资料<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>]]></description>
+</item><item>
+    <title>Try Mnist</title>
+    <link>https://relia.xyz/2021/07/try-mnist/</link>
+    <pubDate>Mon, 26 Jul 2021 10:23:26 &#43;0800</pubDate><author>
+        <name>槲落</name>
+    </author><guid>https://relia.xyz/2021/07/try-mnist/</guid>
+    <description><![CDATA[<p>Artificial Neural Network的尝试, 资料来源<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>]]></description>
+</item><item>
+    <title>NASA Exercise: Ranking Survival Objects for the Moon</title>
+    <link>https://relia.xyz/2021/07/nasa-exercise/</link>
+    <pubDate>Fri, 23 Jul 2021 16:35:42 &#43;0800</pubDate><author>
+        <name>槲落</name>
+    </author><guid>https://relia.xyz/2021/07/nasa-exercise/</guid>
+    <description><![CDATA[<p>前日参加活动, 中间有个团队小游戏比拼活动, 是NASA的一道测试题:</p>
+<p>排序你在迫降到月球上完好无损的15件物品的重要程度</p>]]></description>
+</item><item>
+    <title>My First Hugo</title>
+    <link>https://relia.xyz/2021/07/my-first-hugo/</link>
+    <pubDate>Fri, 23 Jul 2021 10:38:44 &#43;0800</pubDate><author>
+        <name>槲落</name>
+    </author><guid>https://relia.xyz/2021/07/my-first-hugo/</guid>
+    <description><![CDATA[<p>第一篇Hugo搭建的网站上的博客, 包含用Hugo的原因和对Hugo上Markdown的测试</p>]]></description>
+</item></channel>
 </rss>

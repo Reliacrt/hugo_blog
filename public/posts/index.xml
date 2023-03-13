@@ -1,0 +1,8 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>所有文章 - 槲落的小站</title>
+        <link>https://relia.xyz/posts/</link>
+        <description>所有文章 | 槲落的小站</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>reliacrt@outlook.com (槲落)</managingEditor>
+            <webMaster>reliacrt@outlook.com (槲落)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 23 Apr 2022 21:10:24 &#43;0800</lastBuildDate><atom:link href="https://relia.xyz/posts/" rel="self" type="application/rss+xml" /></channel>
+</rss>

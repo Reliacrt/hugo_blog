@@ -1,0 +1,10 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>槲落的小站</title>
+        <link>https://relia.xyz/en/</link>
+        <description>You&#39;ve found Relia&#39;s stone.</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>reliacrt@outlook.com (槲落)</managingEditor>
+            <webMaster>reliacrt@outlook.com (槲落)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+            <atom:link href="https://relia.xyz/en/index.xml" rel="self" type="application/rss+xml" />
+        </channel>
+</rss>

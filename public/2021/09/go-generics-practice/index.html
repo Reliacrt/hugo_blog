@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title>Go泛型体验 - 槲落的小站</title><meta name="Description" content="槲落的小站，你发现了"><meta property="og:title" content="Go泛型体验" />
+<meta property="og:description" content="久等的泛型终于在Go语言中提供了支持, 所以赶快体验一下泛型的舒适." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://relia.xyz/2021/09/go-generics-practice/" /><meta property="og:image" content="https://relia.xyz/images/avatar.webp"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-09-17T15:27:16+08:00" />
+<meta property="article:modified_time" content="2021-09-17T15:27:16+08:00" /><meta property="og:site_name" content="槲落的小站" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://relia.xyz/images/avatar.webp"/>
+
+<meta name="twitter:title" content="Go泛型体验"/>
+<meta name="twitter:description" content="久等的泛型终于在Go语言中提供了支持, 所以赶快体验一下泛型的舒适."/>
+<meta name="application-name" content="槲落的小站">
+<meta name="apple-mobile-web-app-title" content="槲落的小站">
+
+<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://relia.xyz/2021/09/go-generics-practice/" /><link rel="prev" href="https://relia.xyz/2021/08/quic-protocol/" /><link rel="next" href="https://relia.xyz/2021/11/zhulinzhong/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/color.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><meta name="google-site-verification" content="MQ8DNu27ayX6B_4ObiEDK09vGr1fdy7kOAnbd09hJk4" /><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Go泛型体验",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/relia.xyz\/2021\/09\/go-generics-practice\/"
+        },"image": ["https:\/\/relia.xyz\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Go, Study, Generics","wordcount":  411 ,
+        "url": "https:\/\/relia.xyz\/2021\/09\/go-generics-practice\/","datePublished": "2021-09-17T15:27:16+08:00","dateModified": "2021-09-17T15:27:16+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/relia.xyz\/images\/avatar.webp",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "槲落"
+            },"description": ""
+    }
+    </script><script src="//instant.page/5.1.1" defer type="module" integrity="sha384-MWfCL6g1OTGsbSwfuMHc8+8J2u71/LA8dzlIN3ycajckxuZZmF+DNjdm7O6H3PSq"></script>
+</head>
+
+<body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme); document.documentElement.style.setProperty('color-scheme', theme === 'light' ? 'light' : 'dark');}
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('auto' === 'light' || 'auto' === 'dark' || 'auto' === 'black') setTheme('auto'), saveTheme('auto'); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="槲落的小站"><span class="header-title-pre"><i class='far fa-edit fa-fw'></i></span><span id="desktop-header-typeit" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/series/"> 系列 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><a href="#" class="menu-item language" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" title="Select Language" id="language-select-desktop" onchange="location = this.value;"><option value="/2021/09/go-generics-practice/" selected>简体中文</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="#" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="#" class="menu-item theme-select" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                    <select class="color-theme-select" id="theme-select-desktop" title="切换主题">
+                        <option value="light">浅色</option>
+                        <option value="dark">深色</option>
+                        <option value="black">黑色</option>
+                        <option value="auto">跟随系统</option>
+                    </select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="槲落的小站"><span class="header-title-pre"><i class='far fa-edit fa-fw'></i></span><span id="mobile-header-typeit" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="#" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/series/" title="">系列</a><a class="menu-item" href="/about/" title="">关于</a><a href="#" class="menu-item theme-select" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+                <select class="color-theme-select" id="theme-select-mobile" title="切换主题">
+                    <option value="light">浅色</option>
+                    <option value="dark">深色</option>
+                    <option value="black">黑色</option>
+                    <option value="auto">跟随系统</option>
+                </select>
+            </a><a href="#" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" title="Select Language" onchange="location = this.value;"><option value="/2021/09/go-generics-practice/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><div class="toc" id="toc-auto">
+        <h2 class="toc-title">目录</h2>
+        <div class="toc-content" id="toc-content-auto"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#类型聚合">类型聚合</a>
+      <ul>
+        <li><a href="#函数定义">函数定义</a></li>
+        <li><a href="#函数使用">函数使用</a></li>
+        <li><a href="#打印结果">打印结果</a></li>
+      </ul>
+    </li>
+    <li><a href="#结构体泛化">结构体泛化</a>
+      <ul>
+        <li><a href="#函数定义-1">函数定义</a></li>
+        <li><a href="#函数使用-1">函数使用</a></li>
+        <li><a href="#打印结果-1">打印结果</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#参数约束">参数约束</a>
+      <ul>
+        <li><a href="#函数定义-2">函数定义</a></li>
+        <li><a href="#函数使用-2">函数使用</a></li>
+        <li><a href="#打印结果-2">打印结果</a></li>
+      </ul>
+    </li>
+    <li><a href="#返回值约束自动推断">返回值约束（自动推断）</a>
+      <ul>
+        <li><a href="#函数定义-3">函数定义</a></li>
+        <li><a href="#函数使用-3">函数使用</a></li>
+        <li><a href="#输出结果">输出结果</a></li>
+      </ul>
+    </li>
+    <li><a href="#返回值约束类型传参">返回值约束（类型传参）</a>
+      <ul>
+        <li><a href="#函数定义-4">函数定义</a></li>
+        <li><a href="#函数使用-4">函数使用</a></li>
+        <li><a href="#输出结果-1">输出结果</a></li>
+      </ul>
+    </li>
+    <li><a href="#参数和返回值皆约束">参数和返回值皆约束</a>
+      <ul>
+        <li><a href="#函数定义-5">函数定义</a></li>
+        <li><a href="#函数使用-5">函数使用</a></li>
+        <li><a href="#输出结果-2">输出结果</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Go泛型体验</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/reliacrt" title="Author" target="_blank" rel="noopener noreferrer author" class="author">槲落</a>
+                </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/go/"><i class="far fa-folder fa-fw"></i>Go</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-09-17">2021-09-17</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2021-09-17">2021-09-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 411 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/2021/09/go-generics-practice/" class="leancloud_visitors" data-flag-title="Go泛型体验">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class="leancloud-visitors-count waline-pageview-count" data-path="/2021/09/go-generics-practice/"></span>&nbsp;次阅读
+                    </span>&nbsp;<span id="/2021/09/go-generics-practice/" class="comment_count" data-flag-title="Go泛型体验">
+                        <i class="far fa-comments fa-fw"></i>&nbsp;<span class="waline-comment-count" id="waline-comment-count" data-path="/2021/09/go-generics-practice/"></span>&nbsp;条评论
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#类型聚合">类型聚合</a>
+      <ul>
+        <li><a href="#函数定义">函数定义</a></li>
+        <li><a href="#函数使用">函数使用</a></li>
+        <li><a href="#打印结果">打印结果</a></li>
+      </ul>
+    </li>
+    <li><a href="#结构体泛化">结构体泛化</a>
+      <ul>
+        <li><a href="#函数定义-1">函数定义</a></li>
+        <li><a href="#函数使用-1">函数使用</a></li>
+        <li><a href="#打印结果-1">打印结果</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#参数约束">参数约束</a>
+      <ul>
+        <li><a href="#函数定义-2">函数定义</a></li>
+        <li><a href="#函数使用-2">函数使用</a></li>
+        <li><a href="#打印结果-2">打印结果</a></li>
+      </ul>
+    </li>
+    <li><a href="#返回值约束自动推断">返回值约束（自动推断）</a>
+      <ul>
+        <li><a href="#函数定义-3">函数定义</a></li>
+        <li><a href="#函数使用-3">函数使用</a></li>
+        <li><a href="#输出结果">输出结果</a></li>
+      </ul>
+    </li>
+    <li><a href="#返回值约束类型传参">返回值约束（类型传参）</a>
+      <ul>
+        <li><a href="#函数定义-4">函数定义</a></li>
+        <li><a href="#函数使用-4">函数使用</a></li>
+        <li><a href="#输出结果-1">输出结果</a></li>
+      </ul>
+    </li>
+    <li><a href="#参数和返回值皆约束">参数和返回值皆约束</a>
+      <ul>
+        <li><a href="#函数定义-5">函数定义</a></li>
+        <li><a href="#函数使用-5">函数使用</a></li>
+        <li><a href="#输出结果-2">输出结果</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>久等的泛型终于在Go语言中提供了支持, 所以赶快体验一下泛型的舒适.</p>
+<h1 id="环境说明" class="headerLink">
+    <a href="#%e7%8e%af%e5%a2%83%e8%af%b4%e6%98%8e" class="header-mark"></a>环境说明:</h1><blockquote>
+<ol>
+<li>Go版本1.17.1</li>
+<li>运行命令: go run -gcflags=-G=3 main.go</li>
+</ol>
+</blockquote>
+<h1 id="泛型约束类型定义" class="headerLink">
+    <a href="#%e6%b3%9b%e5%9e%8b%e7%ba%a6%e6%9d%9f%e7%b1%bb%e5%9e%8b%e5%ae%9a%e4%b9%89" class="header-mark"></a>泛型约束类型定义</h1><h2 id="类型聚合" class="headerLink">
+    <a href="#%e7%b1%bb%e5%9e%8b%e8%81%9a%e5%90%88" class="header-mark"></a>1 类型聚合</h2><h3 id="函数定义" class="headerLink">
+    <a href="#%e5%87%bd%e6%95%b0%e5%ae%9a%e4%b9%89" class="header-mark"></a>1.1 函数定义</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">Addable</span> <span class="kd">interface</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">type</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int8</span><span class="p">,</span> <span class="kt">int16</span><span class="p">,</span> <span class="kt">int32</span><span class="p">,</span> <span class="kt">int64</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nx">add</span><span class="p">[</span><span class="nx">T</span> <span class="nx">Addable</span><span class="p">](</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span> <span class="nx">T</span><span class="p">)</span><span class="nx">T</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="函数使用" class="headerLink">
+    <a href="#%e5%87%bd%e6%95%b0%e4%bd%bf%e7%94%a8" class="header-mark"></a>1.2 函数使用</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nf">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="打印结果" class="headerLink">
+    <a href="#%e6%89%93%e5%8d%b0%e7%bb%93%e6%9e%9c" class="header-mark"></a>1.3 打印结果</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">3
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="结构体泛化" class="headerLink">
+    <a href="#%e7%bb%93%e6%9e%84%e4%bd%93%e6%b3%9b%e5%8c%96" class="header-mark"></a>2 结构体泛化</h2><h3 id="函数定义-1" class="headerLink">
+    <a href="#%e5%87%bd%e6%95%b0%e5%ae%9a%e4%b9%89-1" class="header-mark"></a>2.1 函数定义</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">myMap</span><span class="p">[</span><span class="nx">T</span> <span class="nx">any</span><span class="p">]</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">m</span> <span class="kd">map</span><span class="p">[</span><span class="kt">int</span><span class="p">]</span><span class="nx">T</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nx">newMyMap</span><span class="p">[</span><span class="nx">T</span> <span class="nx">any</span><span class="p">](</span><span class="nx">size</span> <span class="kt">int</span><span class="p">)</span><span class="o">*</span><span class="nx">myMap</span><span class="p">[</span><span class="nx">T</span><span class="p">]{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="o">&amp;</span><span class="nx">myMap</span><span class="p">[</span><span class="nx">T</span><span class="p">]{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">m</span><span class="p">:</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">int</span><span class="p">]</span><span class="nx">T</span><span class="p">,</span> <span class="nx">size</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="函数使用-1" class="headerLink">
+    <a href="#%e5%87%bd%e6%95%b0%e4%bd%bf%e7%94%a8-1" class="header-mark"></a>2.2 函数使用</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">ss</span> <span class="o">:=</span> <span class="nx">newMyMap</span><span class="p">[</span><span class="kt">string</span><span class="p">](</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nx">ss</span><span class="p">.</span><span class="nx">m</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">=</span> <span class="s">&#34;hello&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">ss</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="打印结果-1" class="headerLink">
+    <a href="#%e6%89%93%e5%8d%b0%e7%bb%93%e6%9e%9c-1" class="header-mark"></a>2.3 打印结果</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">&amp;{map[1:hello]}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="泛型约束函数定义" class="headerLink">
+    <a href="#%e6%b3%9b%e5%9e%8b%e7%ba%a6%e6%9d%9f%e5%87%bd%e6%95%b0%e5%ae%9a%e4%b9%89" class="header-mark"></a>泛型约束函数定义</h1><h2 id="参数约束" class="headerLink">
+    <a href="#%e5%8f%82%e6%95%b0%e7%ba%a6%e6%9d%9f" class="header-mark"></a>1 参数约束</h2><h3 id="函数定义-2" class="headerLink">
+    <a href="#%e5%87%bd%e6%95%b0%e5%ae%9a%e4%b9%89-2" class="header-mark"></a>1.1 函数定义</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nx">testGeneric</span><span class="p">[</span><span class="nx">R</span> <span class="nx">any</span><span class="p">](</span><span class="nx">array</span> <span class="p">[]</span><span class="nx">R</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">e</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">array</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="函数使用-2" class="headerLink">
+    <a href="#%e5%87%bd%e6%95%b0%e4%bd%bf%e7%94%a8-2" class="header-mark"></a>1.2 函数使用</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nf">testGeneric</span><span class="p">([][]</span><span class="kt">int</span><span class="p">{[]</span><span class="kt">int</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">},</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">},</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">}})</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="打印结果-2" class="headerLink">
+    <a href="#%e6%89%93%e5%8d%b0%e7%bb%93%e6%9e%9c-2" class="header-mark"></a>1.3 打印结果</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">[1 2 3]
+</span></span><span class="line"><span class="cl">[4 5 6]
+</span></span><span class="line"><span class="cl">[7 8 9]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="返回值约束自动推断" class="headerLink">
+    <a href="#%e8%bf%94%e5%9b%9e%e5%80%bc%e7%ba%a6%e6%9d%9f%e8%87%aa%e5%8a%a8%e6%8e%a8%e6%96%ad" class="header-mark"></a>2 返回值约束（自动推断）</h2><blockquote>
+<p>注意：无法从赋值语句中自动推断类型</p>
+</blockquote>
+<h3 id="函数定义-3" class="headerLink">
+    <a href="#%e5%87%bd%e6%95%b0%e5%ae%9a%e4%b9%89-3" class="header-mark"></a>2.1 函数定义</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nx">newMap</span><span class="p">[</span><span class="nx">V</span> <span class="nx">any</span><span class="p">]()</span> <span class="kd">map</span><span class="p">[</span><span class="kt">int</span><span class="p">]</span><span class="nx">V</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">int</span><span class="p">]</span><span class="nx">V</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="函数使用-3" class="headerLink">
+    <a href="#%e5%87%bd%e6%95%b0%e4%bd%bf%e7%94%a8-3" class="header-mark"></a>2.2 函数使用</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">myMap</span> <span class="kd">map</span><span class="p">[</span><span class="kt">int</span><span class="p">]</span><span class="kt">string</span> <span class="p">=</span> <span class="nf">newMap</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">myMap</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="输出结果" class="headerLink">
+    <a href="#%e8%be%93%e5%87%ba%e7%bb%93%e6%9e%9c" class="header-mark"></a>2.3 输出结果</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">./main.go:206:35: cannot infer V (/Path/To/main.go:224:13) ([&lt;nil&gt;])
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="返回值约束类型传参" class="headerLink">
+    <a href="#%e8%bf%94%e5%9b%9e%e5%80%bc%e7%ba%a6%e6%9d%9f%e7%b1%bb%e5%9e%8b%e4%bc%a0%e5%8f%82" class="header-mark"></a>3 返回值约束（类型传参）</h2><h3 id="函数定义-4" class="headerLink">
+    <a href="#%e5%87%bd%e6%95%b0%e5%ae%9a%e4%b9%89-4" class="header-mark"></a>3.1 函数定义</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nx">newMap</span><span class="p">[</span><span class="nx">V</span> <span class="nx">any</span><span class="p">]()</span> <span class="kd">map</span><span class="p">[</span><span class="kt">int</span><span class="p">]</span><span class="nx">V</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">int</span><span class="p">]</span><span class="nx">V</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="函数使用-4" class="headerLink">
+    <a href="#%e5%87%bd%e6%95%b0%e4%bd%bf%e7%94%a8-4" class="header-mark"></a>3.2 函数使用</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">myMap</span> <span class="p">=</span> <span class="nx">newMap</span><span class="p">[</span><span class="kt">string</span><span class="p">]()</span>
+</span></span><span class="line"><span class="cl"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">myMap</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="输出结果-1" class="headerLink">
+    <a href="#%e8%be%93%e5%87%ba%e7%bb%93%e6%9e%9c-1" class="header-mark"></a>3.3 输出结果</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">map[]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="参数和返回值皆约束" class="headerLink">
+    <a href="#%e5%8f%82%e6%95%b0%e5%92%8c%e8%bf%94%e5%9b%9e%e5%80%bc%e7%9a%86%e7%ba%a6%e6%9d%9f" class="header-mark"></a>4 参数和返回值皆约束</h2><h3 id="函数定义-5" class="headerLink">
+    <a href="#%e5%87%bd%e6%95%b0%e5%ae%9a%e4%b9%89-5" class="header-mark"></a>4.1 函数定义</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nx">PointerOf</span><span class="p">[</span><span class="nx">V</span> <span class="nx">any</span><span class="p">](</span><span class="nx">value</span> <span class="nx">V</span><span class="p">)</span> <span class="o">*</span><span class="nx">V</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="o">&amp;</span><span class="nx">value</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="函数使用-5" class="headerLink">
+    <a href="#%e5%87%bd%e6%95%b0%e4%bd%bf%e7%94%a8-5" class="header-mark"></a>4.2 函数使用</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">p</span> <span class="o">:=</span> <span class="nf">PointerOf</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">p</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="输出结果-2" class="headerLink">
+    <a href="#%e8%be%93%e5%87%ba%e7%bb%93%e6%9e%9c-2" class="header-mark"></a>4.3 输出结果</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">0xc0000b0150
+</span></span></code></pre></td></tr></table>
+</div>
+</div></div>
+
+        
+
+
+<h2>相关内容</h2>
+<div class="related-container">
+    <div class="related-item-container">
+            <h2 class="related-title">
+                <a href="/2021/08/quic-protocol/">QUIC</a>
+            </h2>
+        </div>
+    <div class="related-item-container">
+            <h2 class="related-title">
+                <a href="/2021/08/learn-go-error-prone-details/">Learn Go Error Prone Details</a>
+            </h2>
+        </div>
+    <div class="related-item-container">
+            <h2 class="related-title">
+                <a href="/2021/07/try-mnist/">Try Mnist</a>
+            </h2>
+        </div>
+    
+
+</div>
+
+<div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-09-17</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span><a class="link-to-mardown" href=/2021/09/go-generics-practice/index.md target="_blank" rel="noopener noreferrer">阅读原始文档</a>
+                    </span><span>|&nbsp;<a class="link-to-source" href=https://github.com/HEIGE-PCloud/DoIt/blob/main/exampleSite/content/posts/go-generics-practice.md target="_blank" rel="noopener noreferrer">查看源代码</a>
+                    </span><span>|&nbsp;<a class="link-to-edit" href=https://github.com/HEIGE-PCloud/DoIt/edit/main/exampleSite/content/posts/go-generics-practice.md target="_blank" rel="noopener noreferrer">编辑此页</a>
+                    </span><span>|&nbsp;<a class="link-to-report" href=https://github.com/HEIGE-PCloud/DoIt/issues/new?title=[bug]%20Go%E6%B3%9B%E5%9E%8B%E4%BD%93%E9%AA%8C&body=|Field|Value|%0A|-|-|%0A|Title|Go%E6%B3%9B%E5%9E%8B%E4%BD%93%E9%AA%8C|%0A|Url|https://relia.xyz/2021/09/go-generics-practice/|%0A|Filename|https://github.com/HEIGE-PCloud/DoIt/blob/main/exampleSite/content/posts/go-generics-practice.md| target="_blank" rel="noopener noreferrer">报告问题</a>
+                    </span></div>
+            <div class="post-info-share">
+                <span><a href="#" title="分享到 Twitter" data-sharer="twitter" data-url="https://relia.xyz/2021/09/go-generics-practice/" data-title="Go泛型体验" data-hashtags="Go,Study,Generics"><i class="fab fa-twitter fa-fw"></i></a><a href="#" title="分享到 Facebook" data-sharer="facebook" data-url="https://relia.xyz/2021/09/go-generics-practice/" data-hashtag="Go"><i class="fab fa-facebook-square fa-fw"></i></a><a href="#" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://relia.xyz/2021/09/go-generics-practice/" data-title="Go泛型体验"><i class="fab fa-hacker-news fa-fw"></i></a><a href="#" title="分享到 Line" data-sharer="line" data-url="https://relia.xyz/2021/09/go-generics-practice/" data-title="Go泛型体验"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="#" title="分享到 微博" data-sharer="weibo" data-url="https://relia.xyz/2021/09/go-generics-practice/" data-title="Go泛型体验"><i class="fab fa-weibo fa-fw"></i></a><a href="#" title="分享到 Telegram" data-sharer="telegram" data-url="https://relia.xyz/2021/09/go-generics-practice/" data-title="Go泛型体验" data-web><i class="fab fa-telegram-plane fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/go/">Go</a>,&nbsp;<a href="/tags/study/">Study</a>,&nbsp;<a href="/tags/generics/">Generics</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2021/08/quic-protocol/" class="prev" rel="prev" title="QUIC"><i class="fas fa-angle-left fa-fw"></i>QUIC</a>
+            <a href="/2021/11/zhulinzhong/" class="next" rel="next" title="芥川龙之介-竹林中">芥川龙之介-竹林中<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="waline" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://waline.js.org/">Waline</a>.
+            </noscript></div></article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">
+                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" title="Hugo 0.111.3">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreferrer" title="DoIt 0.3.0"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/reliacrt" target="_blank" rel="noopener noreferrer">槲落</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+            <div class="footer-line"></div>
+            <div class="footer-line">
+            </div>
+        </div></footer></div>
+
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="回到顶部">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div class="assets"><link rel="stylesheet" href="/lib/waline/waline.min.css"><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"waline":{"comment":true,"copyright":true,"dark":"body[theme='dark'], body[theme='black']","el":"#waline","lang":"zh-cn","pageview":true,"serverURL":"https://comment-waline-api.vercel.app/"}},"data":{"desktop-header-typeit":"这里","mobile-header-typeit":"这里"},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":50,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"sharerjs":true,"table":{"sort":true},"twemoji":true,"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"desktop-header-typeit":["desktop-header-typeit"],"mobile-header-typeit":["mobile-header-typeit"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/lib/waline/waline.js" defer></script><script type="text/javascript" src="/js/waline.min.js" defer></script><script type="text/javascript" src="/lib/tablesort/tablesort.min.js"></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.js" defer></script><script type="text/javascript" src="/js/twemoji.min.js" defer></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/typeit/typeit.min.js"></script><script type="text/javascript" src="/js/theme.min.js" defer></script></div>
+</body>
+
+</html>

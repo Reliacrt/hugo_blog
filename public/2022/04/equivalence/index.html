@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title>Equivalence Relation - 槲落的小站</title><meta name="Description" content="槲落的小站，你发现了"><meta property="og:title" content="Equivalence Relation" />
+<meta property="og:description" content="关于商 1 出发点在这里我要用更普遍的例子来讲数学中的商这个抽象概念. 2 日常例子 2.1 亲缘关系 2.1.1 定义我在这里要定义一种亲缘关系, 不用奉为圭臬, 我只是" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://relia.xyz/2022/04/equivalence/" /><meta property="og:image" content="https://relia.xyz/images/avatar.webp"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-04-17T14:14:04+08:00" />
+<meta property="article:modified_time" content="2022-04-17T14:14:04+08:00" /><meta property="og:site_name" content="槲落的小站" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://relia.xyz/images/avatar.webp"/>
+
+<meta name="twitter:title" content="Equivalence Relation"/>
+<meta name="twitter:description" content="关于商 1 出发点在这里我要用更普遍的例子来讲数学中的商这个抽象概念. 2 日常例子 2.1 亲缘关系 2.1.1 定义我在这里要定义一种亲缘关系, 不用奉为圭臬, 我只是"/>
+<meta name="application-name" content="槲落的小站">
+<meta name="apple-mobile-web-app-title" content="槲落的小站">
+
+<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://relia.xyz/2022/04/equivalence/" /><link rel="prev" href="https://relia.xyz/2022/01/financial_words/" /><link rel="next" href="https://relia.xyz/2022/04/about_identity/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/color.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><meta name="google-site-verification" content="MQ8DNu27ayX6B_4ObiEDK09vGr1fdy7kOAnbd09hJk4" /><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Equivalence Relation",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/relia.xyz\/2022\/04\/equivalence\/"
+        },"image": ["https:\/\/relia.xyz\/images\/Apple-Devices-Preview.png"],"genre": "posts","wordcount":  1484 ,
+        "url": "https:\/\/relia.xyz\/2022\/04\/equivalence\/","datePublished": "2022-04-17T14:14:04+08:00","dateModified": "2022-04-17T14:14:04+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/relia.xyz\/images\/avatar.webp",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "槲落"
+            },"description": ""
+    }
+    </script><script src="//instant.page/5.1.1" defer type="module" integrity="sha384-MWfCL6g1OTGsbSwfuMHc8+8J2u71/LA8dzlIN3ycajckxuZZmF+DNjdm7O6H3PSq"></script>
+</head>
+
+<body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme); document.documentElement.style.setProperty('color-scheme', theme === 'light' ? 'light' : 'dark');}
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('auto' === 'light' || 'auto' === 'dark' || 'auto' === 'black') setTheme('auto'), saveTheme('auto'); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="槲落的小站"><span class="header-title-pre"><i class='far fa-edit fa-fw'></i></span><span id="desktop-header-typeit" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/series/"> 系列 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><a href="#" class="menu-item language" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" title="Select Language" id="language-select-desktop" onchange="location = this.value;"><option value="/2022/04/equivalence/" selected>简体中文</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="#" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="#" class="menu-item theme-select" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                    <select class="color-theme-select" id="theme-select-desktop" title="切换主题">
+                        <option value="light">浅色</option>
+                        <option value="dark">深色</option>
+                        <option value="black">黑色</option>
+                        <option value="auto">跟随系统</option>
+                    </select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="槲落的小站"><span class="header-title-pre"><i class='far fa-edit fa-fw'></i></span><span id="mobile-header-typeit" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="#" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/series/" title="">系列</a><a class="menu-item" href="/about/" title="">关于</a><a href="#" class="menu-item theme-select" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+                <select class="color-theme-select" id="theme-select-mobile" title="切换主题">
+                    <option value="light">浅色</option>
+                    <option value="dark">深色</option>
+                    <option value="black">黑色</option>
+                    <option value="auto">跟随系统</option>
+                </select>
+            </a><a href="#" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" title="Select Language" onchange="location = this.value;"><option value="/2022/04/equivalence/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><div class="toc" id="toc-auto">
+        <h2 class="toc-title">目录</h2>
+        <div class="toc-content" id="toc-content-auto"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#出发点">出发点</a></li>
+    <li><a href="#日常例子">日常例子</a>
+      <ul>
+        <li><a href="#亲缘关系">亲缘关系</a>
+          <ul>
+            <li><a href="#定义">定义</a></li>
+            <li><a href="#家族">家族</a></li>
+          </ul>
+        </li>
+        <li><a href="#关于版权">关于版权</a></li>
+        <li><a href="#关于价位">关于价位</a></li>
+        <li><a href="#各种标签">各种标签</a></li>
+      </ul>
+    </li>
+    <li><a href="#等价关系">等价关系</a>
+      <ul>
+        <li><a href="#关系">关系</a></li>
+        <li><a href="#等价关系-1">等价关系</a></li>
+      </ul>
+    </li>
+    <li><a href="#数学例子">数学例子</a>
+      <ul>
+        <li><a href="#数论上的同余等价类">数论上的同余等价类</a></li>
+        <li><a href="#拓扑上的商空间">拓扑上的商空间</a></li>
+      </ul>
+    </li>
+    <li><a href="#相似与不同">相似与不同</a></li>
+  </ul>
+</nav></div>
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Equivalence Relation</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/reliacrt" title="Author" target="_blank" rel="noopener noreferrer author" class="author">槲落</a>
+                </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/math/"><i class="far fa-folder fa-fw"></i>math</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-04-17">2022-04-17</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-04-17">2022-04-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1484 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/2022/04/equivalence/" class="leancloud_visitors" data-flag-title="Equivalence Relation">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class="leancloud-visitors-count waline-pageview-count" data-path="/2022/04/equivalence/"></span>&nbsp;次阅读
+                    </span>&nbsp;<span id="/2022/04/equivalence/" class="comment_count" data-flag-title="Equivalence Relation">
+                        <i class="far fa-comments fa-fw"></i>&nbsp;<span class="waline-comment-count" id="waline-comment-count" data-path="/2022/04/equivalence/"></span>&nbsp;条评论
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#出发点">出发点</a></li>
+    <li><a href="#日常例子">日常例子</a>
+      <ul>
+        <li><a href="#亲缘关系">亲缘关系</a>
+          <ul>
+            <li><a href="#定义">定义</a></li>
+            <li><a href="#家族">家族</a></li>
+          </ul>
+        </li>
+        <li><a href="#关于版权">关于版权</a></li>
+        <li><a href="#关于价位">关于价位</a></li>
+        <li><a href="#各种标签">各种标签</a></li>
+      </ul>
+    </li>
+    <li><a href="#等价关系">等价关系</a>
+      <ul>
+        <li><a href="#关系">关系</a></li>
+        <li><a href="#等价关系-1">等价关系</a></li>
+      </ul>
+    </li>
+    <li><a href="#数学例子">数学例子</a>
+      <ul>
+        <li><a href="#数论上的同余等价类">数论上的同余等价类</a></li>
+        <li><a href="#拓扑上的商空间">拓扑上的商空间</a></li>
+      </ul>
+    </li>
+    <li><a href="#相似与不同">相似与不同</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="关于商" class="headerLink">
+    <a href="#%e5%85%b3%e4%ba%8e%e5%95%86" class="header-mark"></a>关于商</h1><h2 id="出发点" class="headerLink">
+    <a href="#%e5%87%ba%e5%8f%91%e7%82%b9" class="header-mark"></a>1 出发点</h2><p>在这里我要用更普遍的例子来讲数学中的商这个抽象概念.</p>
+<h2 id="日常例子" class="headerLink">
+    <a href="#%e6%97%a5%e5%b8%b8%e4%be%8b%e5%ad%90" class="header-mark"></a>2 日常例子</h2><h3 id="亲缘关系" class="headerLink">
+    <a href="#%e4%ba%b2%e7%bc%98%e5%85%b3%e7%b3%bb" class="header-mark"></a>2.1 亲缘关系</h3><h4 id="定义" class="headerLink">
+    <a href="#%e5%ae%9a%e4%b9%89" class="header-mark"></a>2.1.1 定义</h4><p>我在这里要定义一种亲缘关系, 不用奉为圭臬, 我只是用这个方法或者说途径告诉大家商是怎么做出来的.</p>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@8.11.0/dist/mermaid.min.js"></script>
+
+<div class="mermaid">
+graph TD;
+	A[李1];
+	B[李2];
+	C[王1];
+	A --- B;
+	C --- B;
+	D[章1];
+	E[赵1];
+	F[章2];
+	D --- F;
+	E --- F;
+	G[李3];
+	B --- G;
+	F --- G;
+	H[钱1];
+	I[孙1];
+	J[钱2];
+	K[钱3];
+	H --- J;
+	I --- J;
+	H --- K;
+	I --- K;
+</div>
+
+<p>上图遵从了传统的继承父姓的原则, 只是便于理解, 不代表不存在继承母姓, 不代表不允许继承母姓.</p>
+<p>上面这张图只给出了父子关系和母子关系, 现在我们加上夫妻关系, 就意味着李1与王1之间存在连线, 章1与赵1之间存在连线, 钱1与孙1之间存在连线,</p>
+<p>李2与章2之间存在连线.</p>
+<p>现在开始下一步, 连续地使用上面三种关系,</p>
+<ul>
+<li>从李1如何到达李3: 李1&ndash;李2: 父子; 李2&ndash;李3: 父子</li>
+<li>从李1如何到达赵1: 李1&ndash;李2: 父子; 李2&ndash;章2: 夫妻; 章2&ndash;赵1: 母子</li>
+</ul>
+<p>也就是说通过上面三种关系能够抵达的任意两个人, 我们说这两个人之间存在亲缘关系, 那这里就有人要说了, 追溯到祖上, 每个人的祖先都是刚走出非洲丛林的亚当和夏娃, 就都是一家人了, 所以在这里要约束一个条件, 还在世的人, 能够通过这种方式构造一个亲缘关系的, 我们才叫这两个人存在某种亲缘关系.</p>
+<h4 id="家族" class="headerLink">
+    <a href="#%e5%ae%b6%e6%97%8f" class="header-mark"></a>2.1.2 家族</h4><p>现在给出家族的定义, 任意两个人, 如果之间存在亲缘关系, 那么属于同一个家族.</p>
+<p>在这里要开始下一步了, 这里给出一个结论, 不存在一个人同时属于两个家族. 大家可以想一想为什么, 如果你看出来了这句话跟之前定义的内在一致性, 那么下一段就可以跳过.</p>
+<p>这里有两个家族: 李氏氏族与赵氏氏族, 加入有某个人张三同时属于两个家族, 那么对于任意一个李氏氏族的人, 存在一条关系叠加关系的路径抵达张三, 同时对于任意一个赵氏氏族的人, 也存在一条路径, 那么通过张三把这两路径连接起来, 我们可以说对任意一个李氏氏族的人和一个赵氏氏族的人, 存在一条关系叠加关系的路径, 也就是说, 这两个人之间存在亲缘关系.</p>
+<h3 id="关于版权" class="headerLink">
+    <a href="#%e5%85%b3%e4%ba%8e%e7%89%88%e6%9d%83" class="header-mark"></a>2.2 关于版权</h3><p>上面的例子有点复杂, 我换一个例子, 同一个实体, 可以是公司, 可以是个人, 拥有版权的出版物之间的关系. 就是说, 任意两个出版物, 他们之间的关系由他们的拥有者是否是同一个所决定.</p>
+<h3 id="关于价位" class="headerLink">
+    <a href="#%e5%85%b3%e4%ba%8e%e4%bb%b7%e4%bd%8d" class="header-mark"></a>2.3 关于价位</h3><p>$[0-100)$是一个区间, $[100,1000)$是一个区间, $[1000,10000)$是一个区间, $[10000,+\infty)$是一个区间, 当然在这里区间怎么划分不重要, 重要是, 通过这个区间划分, 我们得到了两个商品之间的关系. 即价位相同.</p>
+<h3 id="各种标签" class="headerLink">
+    <a href="#%e5%90%84%e7%a7%8d%e6%a0%87%e7%ad%be" class="header-mark"></a>2.4 各种标签</h3><p>上面两个关于版权和价位的过程, 这里俗称贴一种标签, 就是给事物贴上一个不可能同时具有的标签的过程.</p>
+<p>当然我们可以给一本书同时贴上版权和价位的标签, 但是他们是两种标签, 在同一种标签下, 一本确定的, 实实在在在货架上售卖的书, 是不可能有两个标价的.</p>
+<h2 id="等价关系" class="headerLink">
+    <a href="#%e7%ad%89%e4%bb%b7%e5%85%b3%e7%b3%bb" class="header-mark"></a>3 等价关系</h2><p>上面举了很多例子, 目的是告诉大家, 数学中的某些概念, 并不是不存在日常生活中, 把数学视为空中楼阁是不正确的看法.</p>
+<p>现在我引用一下一般的对于等价关系的定义</p>
+<h3 id="关系" class="headerLink">
+    <a href="#%e5%85%b3%e7%b3%bb" class="header-mark"></a>3.1 关系</h3><p>对于一个集合$X$, $X\times X$是一个新集合, 即 $R := {(a, b)|a, b \in X}$</p>
+<p>那么对于$R$来说, 任意一个$R$的子集规定了一种二元关系.</p>
+<p>对于某个关系$R$, 如果$(a,b)\in R$, 我们记作$aRb$</p>
+<h3 id="等价关系-1" class="headerLink">
+    <a href="#%e7%ad%89%e4%bb%b7%e5%85%b3%e7%b3%bb-1" class="header-mark"></a>3.2 等价关系</h3><p>首先等价关系$E$是一种关系$R$, 满足以下条件:</p>
+<ul>
+<li><strong>反身性</strong>: $aRa$</li>
+<li><strong>对称性</strong>: 如果$aRb$, 那么$bRa$</li>
+<li><strong>传递性</strong>: 如果$aRb$且$bRc$, 那么$aRc$</li>
+</ul>
+<h2 id="数学例子" class="headerLink">
+    <a href="#%e6%95%b0%e5%ad%a6%e4%be%8b%e5%ad%90" class="header-mark"></a>4 数学例子</h2><p>这里举两个例子</p>
+<h3 id="数论上的同余等价类" class="headerLink">
+    <a href="#%e6%95%b0%e8%ae%ba%e4%b8%8a%e7%9a%84%e5%90%8c%e4%bd%99%e7%ad%89%e4%bb%b7%e7%b1%bb" class="header-mark"></a>4.1 数论上的同余等价类</h3><h3 id="拓扑上的商空间" class="headerLink">
+    <a href="#%e6%8b%93%e6%89%91%e4%b8%8a%e7%9a%84%e5%95%86%e7%a9%ba%e9%97%b4" class="header-mark"></a>4.2 拓扑上的商空间</h3><h2 id="相似与不同" class="headerLink">
+    <a href="#%e7%9b%b8%e4%bc%bc%e4%b8%8e%e4%b8%8d%e5%90%8c" class="header-mark"></a>5 相似与不同</h2></div>
+
+        
+
+<div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2022-04-17</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span><a class="link-to-mardown" href=/2022/04/equivalence/index.md target="_blank" rel="noopener noreferrer">阅读原始文档</a>
+                    </span><span>|&nbsp;<a class="link-to-source" href=https://github.com/HEIGE-PCloud/DoIt/blob/main/exampleSite/content/posts/equivalence.md target="_blank" rel="noopener noreferrer">查看源代码</a>
+                    </span><span>|&nbsp;<a class="link-to-edit" href=https://github.com/HEIGE-PCloud/DoIt/edit/main/exampleSite/content/posts/equivalence.md target="_blank" rel="noopener noreferrer">编辑此页</a>
+                    </span><span>|&nbsp;<a class="link-to-report" href=https://github.com/HEIGE-PCloud/DoIt/issues/new?title=[bug]%20Equivalence+Relation&body=|Field|Value|%0A|-|-|%0A|Title|Equivalence+Relation|%0A|Url|https://relia.xyz/2022/04/equivalence/|%0A|Filename|https://github.com/HEIGE-PCloud/DoIt/blob/main/exampleSite/content/posts/equivalence.md| target="_blank" rel="noopener noreferrer">报告问题</a>
+                    </span></div>
+            <div class="post-info-share">
+                <span><a href="#" title="分享到 Twitter" data-sharer="twitter" data-url="https://relia.xyz/2022/04/equivalence/" data-title="Equivalence Relation"><i class="fab fa-twitter fa-fw"></i></a><a href="#" title="分享到 Facebook" data-sharer="facebook" data-url="https://relia.xyz/2022/04/equivalence/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="#" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://relia.xyz/2022/04/equivalence/" data-title="Equivalence Relation"><i class="fab fa-hacker-news fa-fw"></i></a><a href="#" title="分享到 Line" data-sharer="line" data-url="https://relia.xyz/2022/04/equivalence/" data-title="Equivalence Relation"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="#" title="分享到 微博" data-sharer="weibo" data-url="https://relia.xyz/2022/04/equivalence/" data-title="Equivalence Relation"><i class="fab fa-weibo fa-fw"></i></a><a href="#" title="分享到 Telegram" data-sharer="telegram" data-url="https://relia.xyz/2022/04/equivalence/" data-title="Equivalence Relation" data-web><i class="fab fa-telegram-plane fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2022/01/financial_words/" class="prev" rel="prev" title="金融单词"><i class="fas fa-angle-left fa-fw"></i>金融单词</a>
+            <a href="/2022/04/about_identity/" class="next" rel="next" title="关于同一性">关于同一性<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="waline" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://waline.js.org/">Waline</a>.
+            </noscript></div></article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">
+                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" title="Hugo 0.111.3">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreferrer" title="DoIt 0.3.0"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/reliacrt" target="_blank" rel="noopener noreferrer">槲落</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+            <div class="footer-line"></div>
+            <div class="footer-line">
+            </div>
+        </div></footer></div>
+
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="回到顶部">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div class="assets"><link rel="stylesheet" href="/lib/waline/waline.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/copy-tex.min.css">
+        <noscript><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"></noscript><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"waline":{"comment":true,"copyright":true,"dark":"body[theme='dark'], body[theme='black']","el":"#waline","lang":"zh-cn","pageview":true,"serverURL":"https://comment-waline-api.vercel.app/"}},"data":{"desktop-header-typeit":"这里","mobile-header-typeit":"这里"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":50,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"sharerjs":true,"table":{"sort":true},"twemoji":true,"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"desktop-header-typeit":["desktop-header-typeit"],"mobile-header-typeit":["mobile-header-typeit"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/lib/waline/waline.js" defer></script><script type="text/javascript" src="/js/waline.min.js" defer></script><script type="text/javascript" src="/lib/tablesort/tablesort.min.js"></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.js" defer></script><script type="text/javascript" src="/js/twemoji.min.js" defer></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/typeit/typeit.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js" defer></script><script type="text/javascript" src="/lib/katex/auto-render.min.js" defer></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js" defer></script><script type="text/javascript" src="/lib/katex/mhchem.min.js" defer></script><script type="text/javascript" src="/js/katex.min.js" defer></script><script type="text/javascript" src="/js/theme.min.js" defer></script></div>
+</body>
+
+</html>

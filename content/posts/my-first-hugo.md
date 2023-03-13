@@ -3,13 +3,14 @@ title: "My First Hugo"
 date: 2021-07-23T10:38:44+08:00
 lastmod: 2021-09-24T14:37:00+08:00
 tags: [
-"Hugo",
-"Markdown"
+    "Hugo",
+    "Markdown"
 ]
 categories: [
-"杂项"
+    "杂项"
 ]
-mathjax: true
+math:
+    enable: true
 ---
 
 第一篇Hugo搭建的网站上的博客, 包含用Hugo的原因和对Hugo上Markdown的测试
@@ -47,15 +48,14 @@ $$
 
 #### 麦克斯韦方程组
 
-
-{{< equation >}}
+$$
 \begin{align*}
 \nabla\cdot\vec{E} &= \frac{\rho}{\epsilon_0} \\
 \nabla\cdot\vec{B} &= 0 \\
 \nabla\times\vec{E} &= -\frac{\partial B}{\partial t} \\
 \nabla\times\vec{B} &= \mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t} \right)
 \end{align*}
-{{< /equation >}}
+$$
 
 ## 代码块
 
@@ -138,7 +138,7 @@ for i in range(0, 10):
 {{< raw >}}
 <p>
 一个笔记横幅, echo<br>
-中文字体行高会有问题, 没有自动嵌入\<p\>标签
+中文测试
 </p>
 {{< /raw >}}
 {{< /admonition >}}
@@ -218,7 +218,7 @@ Without title.
 
 #### music
 
-{{% music "28196554" "1" %}}
+{{< music auto="https://music.163.com/#/playlist?id=7536731516" >}}
 
 ## 注释
 
@@ -234,7 +234,7 @@ A footnote with link[^pa]
 
 
 |      | 年龄 | 职业    |
-| ---- | ---- | ------- |
+| ---- | ---- | -------|
 | 小明 | 10   | Student |
 | 小红 | 11   | Student |
 | 小绿 | 12   | Student |
@@ -320,22 +320,7 @@ A footnote with link[^pa]
 
 ==高亮文字==
 
-## 暂时不支持mermaid
-
-{{< raw >}}
-<script src="https://cdn.jsdelivr.net/npm/mermaid@8.11.0/dist/mermaid.min.js"></script>
-    <div class="mermaid">
-        sequenceDiagram A-->B: Works!
-    </div>
-    <div class="firstTest mermaid">
-       graph LR;
-        A--合并-->B;
-        A-->C;
-        B-->D;
-        C-->D;
-    </div>
-
-{{< /raw >}}
+## 支持mermaid
 
 ```mermaid
 graph TD
@@ -348,7 +333,7 @@ graph TD
 
 ## 页内跳转
 
-[注释](#注释)
+[公式](#公式)
 
 ## People emoji
 

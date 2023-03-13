@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Python - 标签 - 槲落的小站</title>
+        <link>https://relia.xyz/tags/python/</link>
+        <description>Python - 标签 - 槲落的小站</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>reliacrt@outlook.com (槲落)</managingEditor>
+            <webMaster>reliacrt@outlook.com (槲落)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 26 Jul 2021 10:23:26 &#43;0800</lastBuildDate><atom:link href="https://relia.xyz/tags/python/" rel="self" type="application/rss+xml" /><item>
+    <title>Try Mnist</title>
+    <link>https://relia.xyz/2021/07/try-mnist/</link>
+    <pubDate>Mon, 26 Jul 2021 10:23:26 &#43;0800</pubDate><author>
+        <name>槲落</name>
+    </author><guid>https://relia.xyz/2021/07/try-mnist/</guid>
+    <description><![CDATA[<p>Artificial Neural Network的尝试, 资料来源<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>]]></description>
+</item></channel>
+</rss>
