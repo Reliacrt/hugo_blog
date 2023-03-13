@@ -1,9 +1,6 @@
 [submodule "themes/maupassant"]
 	path = themes/maupassant
 	url = https://github.com/flysnow-org/maupassant-hugo
-[submodule "themes/even"]
-	path = themes/even
-	url = https://github.com/olOwOlo/hugo-theme-even
 [submodule "themes/hugo-theme-stack"]
 	path = themes/hugo-theme-stack
 	url = https://github.com/CaiJimmy/hugo-theme-stack/
@@ -13,6 +10,4 @@
 [submodule "themes/hugo-theme-itheme"]
 	path = themes/hugo-theme-itheme
 	url = https://github.com/floyd-li/hugo-theme-itheme.git
-[submodule "hugo-theme-stack"]
-	path = hugo-theme-stack
-	url = git@github.com:CaiJimmy/hugo-theme-stack.git
+
