@@ -310,14 +310,14 @@ A footnote with link[^pa]
 
 ## 支持mermaid
 
-```mermaid
+{{< mermaid >}}
 graph TD
     A[Start] --> B{Is it?};
     B -->|Yes| C[OK];
     C --> D[Rethink];
     D --> B;
     B ---->|No| E[End];
-```
+{{< /mermaid >}}
 
 ## 页内跳转
 
