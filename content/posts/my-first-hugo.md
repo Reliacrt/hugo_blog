@@ -1,7 +1,7 @@
 ---
 title: "My First Hugo"
 date: 2021-07-23T10:38:44+08:00
-
+lastmod: 2023-03-14T12:10:43+08:00
 tags: [
     "Hugo",
     "Markdown"
@@ -49,6 +49,7 @@ E=mc^2
 $$
 
 #### 麦克斯韦方程组
+
 
 $$
 \begin{align*}

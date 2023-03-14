@@ -1,7 +1,6 @@
 ---
 title: "Equivalence Relation"
 date: 2022-04-17T14:14:04+08:00
-
 tag: [
     "eqivalence relation",
     "quotient"
