@@ -1,7 +1,7 @@
 ---
 title: "My First Hugo"
 date: 2021-07-23T10:38:44+08:00
-lastmod: 2021-09-24T14:37:00+08:00
+
 tags: [
     "Hugo",
     "Markdown"
@@ -9,6 +9,8 @@ tags: [
 categories: [
     "杂项"
 ]
+#featuredImage: "images/featured-image.webp"
+#featuredImagePreview: "featured-image-preview.webp"
 math:
     enable: true
 ---
@@ -322,14 +324,14 @@ A footnote with link[^pa]
 
 ## 支持mermaid
 
-```mermaid
+{{< mermaid >}}
 graph TD
     A[Start] --> B{Is it?};
     B -->|Yes| C[OK];
     C --> D[Rethink];
     D --> B;
     B ---->|No| E[End];
-```
+{{< /mermaid >}}
 
 ## 页内跳转
 

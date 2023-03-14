@@ -25,35 +25,30 @@ math:
 
 我在这里要定义一种亲缘关系, 不用奉为圭臬, 我只是用这个方法或者说途径告诉大家商是怎么做出来的.
 
-{{< raw >}}
-
-<script src="https://cdn.jsdelivr.net/npm/mermaid@8.11.0/dist/mermaid.min.js"></script>
-
-<div class="mermaid">
-graph TD;
-	A[李1];
-	B[李2];
-	C[王1];
-	A --- B;
-	C --- B;
-	D[章1];
-	E[赵1];
-	F[章2];
-	D --- F;
-	E --- F;
-	G[李3];
-	B --- G;
-	F --- G;
-	H[钱1];
-	I[孙1];
-	J[钱2];
-	K[钱3];
-	H --- J;
-	I --- J;
-	H --- K;
-	I --- K;
-</div>
-{{< /raw >}}
+{{< mermaid >}}
+graph TD
+	A[李1]
+	B[李2]
+	C[王1]
+	A --- B
+	C --- B
+	D[章1]
+	E[赵1]
+	F[章2]
+	D --- F
+	E --- F
+	G[李3]
+	B --- G
+	F --- G
+	H[钱1]
+	I[孙1]
+	J[钱2]
+	K[钱3]
+	H --- J
+	I --- J
+	H --- K
+	I --- K
+{{< /mermaid >}}
 
 上图遵从了传统的继承父姓的原则, 只是便于理解, 不代表不存在继承母姓, 不代表不允许继承母姓.
 
