@@ -4,16 +4,9 @@
         <link>https://relia.xyz/</link>
         <description>槲落的小站，你发现了</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>reliacrt@outlook.com (槲落)</managingEditor>
-            <webMaster>reliacrt@outlook.com (槲落)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 14 Mar 2023 11:04:52 &#43;0800</lastBuildDate>
+            <webMaster>reliacrt@outlook.com (槲落)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 23 Apr 2022 21:10:24 &#43;0800</lastBuildDate>
             <atom:link href="https://relia.xyz/index.xml" rel="self" type="application/rss+xml" />
         <item>
-    <title>About_kmp</title>
-    <link>https://relia.xyz/2023/03/about_kmp/</link>
-    <pubDate>Tue, 14 Mar 2023 11:04:52 &#43;0800</pubDate><author>
-        <name>槲落</name>
-    </author><guid>https://relia.xyz/2023/03/about_kmp/</guid>
-    <description><![CDATA[关于kmp等字符串]]></description>
-</item><item>
     <title>关于同一性</title>
     <link>https://relia.xyz/2022/04/about_identity/</link>
     <pubDate>Sat, 23 Apr 2022 21:10:24 &#43;0800</pubDate><author>
@@ -84,5 +77,12 @@
     </author><guid>https://relia.xyz/2021/07/nasa-exercise/</guid>
     <description><![CDATA[<p>前日参加活动, 中间有个团队小游戏比拼活动, 是NASA的一道测试题:</p>
 <p>排序你在迫降到月球上完好无损的15件物品的重要程度</p>]]></description>
+</item><item>
+    <title>My First Hugo</title>
+    <link>https://relia.xyz/2021/07/my-first-hugo/</link>
+    <pubDate>Fri, 23 Jul 2021 10:38:44 &#43;0800</pubDate><author>
+        <name>槲落</name>
+    </author><guid>https://relia.xyz/2021/07/my-first-hugo/</guid>
+    <description><![CDATA[<p>第一篇Hugo搭建的网站上的博客, 包含用Hugo的原因和对Hugo上Markdown的测试</p>]]></description>
 </item></channel>
 </rss>

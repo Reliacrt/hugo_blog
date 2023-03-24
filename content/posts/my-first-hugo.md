@@ -196,6 +196,9 @@ biu biu biu.
 
 {{% admonition example %}}
 Without title.
+```mysql
+insert into people (name, email) values ('relia', 'reliacrt@outlook.com');
+```
 {{% /admonition %}}
 
 {{% /admonition %}}
@@ -337,6 +340,7 @@ graph TD
 ## 页内跳转
 
 [公式](#公式)
+[行间公式](#行间公式)
 
 ## People emoji
 
