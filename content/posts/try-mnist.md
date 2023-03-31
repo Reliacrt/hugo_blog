@@ -2,7 +2,9 @@
 title: "Try Mnist"
 date: 2021-07-26T10:23:26+08:00
 draft: false
-mathjax: true
+math:
+  enable:
+    true
 tags: [
   "Study",
   "MNIST",
@@ -25,6 +27,7 @@ Artificial Neural Network的尝试, 资料来源[^1]
 - **weights** **权重**: $w_1,w_2,…,$ importance of the respective inputs
 - **threshold** **阈值**: decide if neuron should be activated
 
+<!-- mathjax language rule
 {{< equation >}}
 \begin{eqnarray}
   \mbox{output} & = & \left\{ 
@@ -33,13 +36,20 @@ Artificial Neural Network的尝试, 资料来源[^1]
       1 & \mbox{if } \sum_j w_j x_j > \mbox{ threshold}
       \end{array} \right.
 \tag{1}\end{eqnarray}
-{{< /equation >}}
+{{< /equation >}} -->
+
+$$
+\text{output} = \begin{cases}
+0 &\text{if}&\sum_j w_j x_j \leq threshold \newline
+1 &\text{if}&\sum_j w_j x_j \leq threshold 
+\end{cases} \tag{1}
+$$
 
 ## Simplification 简化
 
 move threshold to another side of the inequality:
 
-{{< equation >}}
+<!-- {{< equation >}}
 \begin{eqnarray}
   output = \left \{
     \begin{array}{ll} 
@@ -48,7 +58,14 @@ move threshold to another side of the inequality:
     \end{array}
   \right .
 \tag{2}\end{eqnarray}
-{{< /equation >}}
+{{< /equation >}} -->
+
+$$
+\text{output} = \begin{cases}
+0 & \text{if}&w\cdot x + b \leq 0 \newline
+1 & \text{if}&w\cdot x + b \gt 0
+\end{cases} \tag {2}
+$$
 
 # Generate basical logical function 生成逻辑函数
 
@@ -74,28 +91,25 @@ But the input 11 produces output 0, since $(−2)\times1+(−2)\times1+3=−1$ i
 # Sigmoid function
 
 ## Definition 定义
-{{< equation >}}
-\begin{eqnarray} 
-  \sigma(z) \equiv \frac{1}{1+e^{-z}}.
-\tag{3}\end{eqnarray}
-{{< /equation >}}
+$$
+  \sigma(z) \equiv \frac{1}{1+e^{-z}}\tag{3}
+$$
 
 ## With z 带入z
 
-{{< equation >}}
-\begin{eqnarray} 
-  \frac{1}{1+\exp(-\sum_j w_j x_j-b)}.
-\tag{4}\end{eqnarray}
-{{< /equation >}}
+$$
+  \frac{1}{1+\exp(-\sum_j w_j x_j-b)}\tag{4}
+$$
 
 # Total differential 全微分
 
-{{< equation >}}
-\begin{eqnarray} 
-  \Delta \mbox{output} \approx \sum_j \frac{\partial \, \mbox{output}}{\partial w_j}
-  \Delta w_j + \frac{\partial \, \mbox{output}}{\partial b} \Delta b,
-\tag{5}\end{eqnarray}
-{{< /equation >}}
+$$
+  \Delta \text{output} \approx
+  \sum_j 
+  \frac{\partial\,\text{output}}{\partial w_j}\Delta w_j +
+  \frac{\partial\,\text{output}}{\partial b} \Delta b,
+\tag{5}
+$$
 
 # Cost function 损失函数
 
@@ -103,12 +117,9 @@ To quantify how well we're achieving this goal we define a **cost function**
 
 > Sometimes referred to as a **loss or objective function**.
 
-{{< equation >}}
-\begin{eqnarray}  
-C(w,b) \equiv
-  \frac{1}{2n} \sum_x \| y(x) - a\|^2.
-\tag{6}\end{eqnarray}
-{{< /equation >}}
+$$
+C(w,b) \equiv\frac{1}{2n} \sum_x \| y(x) - a\|^2\tag{6}
+$$
 
  For example, if a particular training image, $x$, depicts a $6$, then $y(x)=(0,0,0,0,0,0,1,0,0,0)^T$ is the desired output from the network.
 
